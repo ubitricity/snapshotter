@@ -66,7 +66,7 @@ java:
 Snapshotter snapshotter = new Snapshotter("path_where_you_want_to_keep_snapshots");
 ```
         
-1. Use snapshotter validations
+2. Use snapshotter validations
 
 kotlin:
 ```kotlin
