@@ -101,6 +101,15 @@ ValidationConfig(
 )
 ```
 
+### Update changed snapshots
+
+To update snapshots that changed, pass the JVM system property `updateSnapshots` with value `1`.
+E.g. by specifying it when running maven: `mvn test -DupdateSnapshots=1` or by setting it programmatically:
+
+```kotlin
+System.setProperty("updateSnapshots", "1")
+```
+
 ## Motivation
 This library is heavily inspired by an awesome [KotlinSnapshot](https://github.com/Karumi/KotlinSnapshot). Unfortunately, their approach to comparing snapshots is based on String equality. For our purposes, where we use snapshots for performing acceptance tests we always compare JSON responses. Using string comparison for JSON objects leads to multiple inconveniences, in particular:
 * We need to guarantee that the contents are the same. This is tedious to do for UUIDs and timestamps
